@@ -1,0 +1,11 @@
+input#project_filter {
+    background: url("../images/magnifier.png") no-repeat scroll 2px 50% transparent;
+    border: 1px solid #9EB1C2;
+    border-radius: 3px 3px 3px 3px;
+    height: 1.5em;
+    padding-left: 20px;
+    width: 95%;
+}
+input#project_filter.ajax-loading {
+    background-image: url("../images/loading.gif");
+}
