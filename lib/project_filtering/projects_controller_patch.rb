@@ -8,6 +8,8 @@ module ProjectFiltering
 
       base.class_eval do
         unloadable
+        helper :projects
+        include ProjectsHelper
       end
     end
 
@@ -18,7 +20,7 @@ module ProjectFiltering
       def projects
         q = params[:q].to_s.strip
         if q.present?
-          @projects = Project.active.visible.like(q).order('lft').all
+          @projects = Project.active.visible.like(q).order('lft')
         else
           @projects = Project.active.visible
         end
